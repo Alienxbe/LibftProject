@@ -4,7 +4,8 @@ DRED		=	\e[38;5;52m
 YELLOW		=	\e[38;5;3m
 NC			=	\e[0m
 
-SRCS		=	ft_memset.c
+SRCS		=	ft_memset.c \
+				ft_bzero.c
 
 OBJS		=	$(addprefix srcs/, ${SRCS:.c=.o})
 

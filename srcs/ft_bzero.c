@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mykman <mykman@student.19.be>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/10 15:54:10 by mykman            #+#    #+#             */
-/*   Updated: 2020/10/13 09:56:54 by mykman           ###   ########.fr       */
+/*   Created: 2020/10/13 09:50:15 by mykman            #+#    #+#             */
+/*   Updated: 2020/10/13 09:56:26 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
-int main()
+void	ft_bzero(void *s, size_t n)
 {
-	char	str[50] = "Hello world, how are you ?";
+	char	*ptr;
 
-	ft_bzero(str + 6, 5 * sizeof(char));
-	printf("%s\n", str);
-	return (0);
+	ptr = (char *)s;
+	while (n--)
+		ptr[n] = 0;
 }
