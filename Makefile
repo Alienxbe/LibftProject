@@ -1,11 +1,23 @@
-GREEN		=	\e[38;5;2m
-RED			=	\e[38;5;1m
-DRED		=	\e[38;5;52m
-YELLOW		=	\e[38;5;3m
-NC			=	\e[0m
+BLACK		= $(shell tput -Txterm setaf 0)
+RED			= $(shell tput -Txterm setaf 1)
+GREEN		= $(shell tput -Txterm setaf 2)
+YELLOW		= $(shell tput -Txterm setaf 3)
+LIGHTPURPLE	= $(shell tput -Txterm setaf 4)
+PURPLE		= $(shell tput -Txterm setaf 5)
+BLUE		= $(shell tput -Txterm setaf 6)
+WHITE		= $(shell tput -Txterm setaf 7)
+RESET		= $(shell tput -Txterm sgr0)
 
 SRCS		=	ft_memset.c \
-				ft_bzero.c
+				ft_strlen.c \
+				ft_isalpha.c \
+				ft_isdigit.c \
+				ft_isalnum.c \
+				ft_isascii.c \
+				ft_isprint.c \
+				ft_toupper.c \
+				ft_tolower.c \
+				ft_strchr.c
 
 OBJS		=	$(addprefix srcs/, ${SRCS:.c=.o})
 
@@ -15,24 +27,26 @@ CC			=	@gcc
 CFLAGS		=	-Wall -Wextra -Werror
 
 .c.o:
-				${CC} ${CFLAGS} -c -I./includes $< -o ${<:.c=.o}
-				@echo "${YELLOW}Compilation of $<...${NC}"
+	${CC} ${CFLAGS} -c -I./includes $< -o ${<:.c=.o}
+	@echo "${YELLOW}Compilation of $<...${RESET}"
 
 ${NAME}:	${OBJS}
-				@ar -rcs $@ $^
-				@echo "${GREEN}Library created !${NC}"
+	@ar -rcs $@ $^
+	@echo "${GREEN}Library created !${RESET}"
 
 all:		${NAME}
 
 clean:
-				@rm -f ${OBJS}
-				@echo "${RED}Cleaning ojects.${NC}"
+	@rm -f ${OBJS}
+	@echo "${PURPLE}Cleaning ojects.${RESET}"
 
 fclean:
-				@rm -f ${OBJS}
-				@rm -f ${NAME}
-				@echo "${DRED}Full clean.${NC}"
+	@rm -f ${OBJS}
+	@rm -f ${NAME}
+	@echo "${RED}Full clean.${RESET}"
 
 re:			fclean all
 
-.PHONY:		all clean fclean re
+reclean:	re clean
+
+.PHONY:		all clean fclean re reclen
