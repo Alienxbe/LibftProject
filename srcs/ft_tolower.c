@@ -1,22 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/10 15:54:10 by mykman            #+#    #+#             */
-/*   Updated: 2020/11/17 18:16:06 by mykman           ###   ########.fr       */
+/*   Created: 2020/11/17 17:36:15 by mykman            #+#    #+#             */
+/*   Updated: 2020/11/17 17:44:09 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
-#include <stdio.h>
-#include <ctype.h>
-
-int main()
+int	ft_tolower(int c)
 {
-	char str[] = "Bonjour tout vas bien";
-	printf("%c\n", *ft_strchr(str, 'z'));
-	return 0;
+	return ((c >= 'A' && c <= 'Z') ? c + 32 : c);
 }

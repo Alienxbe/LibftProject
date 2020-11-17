@@ -1,22 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/10 15:54:10 by mykman            #+#    #+#             */
-/*   Updated: 2020/11/17 18:16:06 by mykman           ###   ########.fr       */
+/*   Created: 2020/11/17 16:12:45 by mykman            #+#    #+#             */
+/*   Updated: 2020/11/17 16:16:44 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
-#include <stdio.h>
-#include <ctype.h>
-
-int main()
+int	ft_isascii(int c)
 {
-	char str[] = "Bonjour tout vas bien";
-	printf("%c\n", *ft_strchr(str, 'z'));
-	return 0;
+	return ((c >= 0 && c <= 127) ? 1 : 0);
 }

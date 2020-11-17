@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/10 15:54:10 by mykman            #+#    #+#             */
-/*   Updated: 2020/11/17 18:16:06 by mykman           ###   ########.fr       */
+/*   Created: 2020/11/17 15:07:34 by mykman            #+#    #+#             */
+/*   Updated: 2020/11/17 16:01:59 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
-#include <stdio.h>
-#include <ctype.h>
+#include "libft.h"
 
-int main()
+size_t	ft_strlen(const char *s)
 {
-	char str[] = "Bonjour tout vas bien";
-	printf("%c\n", *ft_strchr(str, 'z'));
-	return 0;
+	size_t i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
 }
