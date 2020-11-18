@@ -9,6 +9,8 @@ WHITE		= $(shell tput -Txterm setaf 7)
 RESET		= $(shell tput -Txterm sgr0)
 
 SRCS		=	ft_memset.c \
+				ft_bzero.c \
+				ft_memcpy.c \
 				ft_strlen.c \
 				ft_isalpha.c \
 				ft_isdigit.c \
@@ -18,7 +20,12 @@ SRCS		=	ft_memset.c \
 				ft_toupper.c \
 				ft_tolower.c \
 				ft_strchr.c \
-				ft_strrchr.c
+				ft_strrchr.c \
+				ft_strncmp.c \
+				ft_strlcpy.c \
+				ft_strlcat.c \
+				ft_strnstr.c \
+				ft_atoi.c
 
 OBJS		=	$(addprefix srcs/, ${SRCS:.c=.o})
 

@@ -1,11 +1,4 @@
-bzero
-memcpy
 memccpy
 memmove
 memchr
 memcmp
-strncmp
-strlcpy
-strlcat
-strnstr
-atoi
