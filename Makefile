@@ -17,7 +17,8 @@ SRCS		=	ft_memset.c \
 				ft_isprint.c \
 				ft_toupper.c \
 				ft_tolower.c \
-				ft_strchr.c
+				ft_strchr.c \
+				ft_strrchr.c
 
 OBJS		=	$(addprefix srcs/, ${SRCS:.c=.o})
 
