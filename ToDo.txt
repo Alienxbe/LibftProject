@@ -4,8 +4,6 @@ memccpy
 memmove
 memchr
 memcmp
-strchr
-strrchr
 strncmp
 strlcpy
 strlcat
