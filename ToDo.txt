@@ -4,8 +4,6 @@ memccpy
 memmove
 memchr
 memcmp
-toupper
-tolower
 strchr
 strrchr
 strncmp
