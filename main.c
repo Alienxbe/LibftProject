@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
+/*   By: mykman <mykman@student.19.be>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/10 15:54:10 by mykman            #+#    #+#             */
-/*   Updated: 2020/11/18 19:06:57 by mykman           ###   ########.fr       */
+/*   Updated: 2020/11/19 17:37:17 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,10 @@
 
 int main()
 {
-	char str[] = "Hello world. How are you doing ?";
-	ft_memcpy(str + 10, str + 5, 20);
-	printf("%s\n", str);
+	/*char str[] = "Hello world. How are you doing ?";
+	memmove(str + 10, str + 5, 20);*/
+	char n[] = "1000000000223372036854775808";
+
+	printf("%d\n%d\n", ft_atoi(n), atoi(n));
 	return (0);
 }
