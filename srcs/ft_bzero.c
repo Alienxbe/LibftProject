@@ -6,7 +6,7 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 09:50:15 by mykman            #+#    #+#             */
-/*   Updated: 2020/11/18 12:32:36 by mykman           ###   ########.fr       */
+/*   Updated: 2020/11/20 15:47:47 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,5 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	char	*ptr;
-
-	ptr = (char *)s;
-	while (n--)
-		ptr[n] = 0;
+	ft_memset(s, 0, n);
 }

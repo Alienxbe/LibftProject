@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/18 12:29:50 by mykman            #+#    #+#             */
-/*   Updated: 2020/11/20 14:27:19 by mykman           ###   ########.fr       */
+/*   Created: 2020/11/20 19:41:16 by mykman            #+#    #+#             */
+/*   Updated: 2020/11/20 19:51:35 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char	**ft_split(const char *s, char c)
 {
-	unsigned char	*ptr_dest;
-	unsigned char	*ptr_src;
+	char	*ptr;
 
-	if (!dest && !src)
-		return (0);
-	ptr_dest = (unsigned char *)dest;
-	ptr_src = (unsigned char *)src;
-	while (n--)
-		*(ptr_dest + n) = *(ptr_src + n);
-	return (dest);
+	ptr = (char *)s
+	while (*s)
+	{
+		if (*s == c)
+			
+	}
 }

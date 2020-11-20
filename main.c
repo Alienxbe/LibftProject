@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mykman <mykman@student.19.be>              +#+  +:+       +#+        */
+/*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/10 15:54:10 by mykman            #+#    #+#             */
-/*   Updated: 2020/11/20 10:53:37 by mykman           ###   ########.fr       */
+/*   Updated: 2020/11/20 18:53:23 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@
 
 int main()
 {
-	char str1[] = "Hello";
-	char *str2 = 0;
+	char str1[] = "-++-+++--+-Bonjour++-TOI--++-++-++---";
+	char set[] = "-+";
 	char *dest;
 
-	dest = ft_strjoin(str1, str2);
+	dest = ft_strtrim(str1, set);
 	printf("%s\n", dest);
 	return (0);
 }

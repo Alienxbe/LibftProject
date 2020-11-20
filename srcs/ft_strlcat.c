@@ -6,7 +6,7 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 13:16:24 by mykman            #+#    #+#             */
-/*   Updated: 2020/11/18 19:19:01 by mykman           ###   ########.fr       */
+/*   Updated: 2020/11/20 14:47:30 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 		return (dstsize + ft_strlen(src));
 	while (src[++i] && i < dstsize - dst_len - 1)
 		dst[i + dst_len] = src[i];
+	dst[i + dst_len] = 0;
 	return (dst_len + ft_strlen(src));
 }

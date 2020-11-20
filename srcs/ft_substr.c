@@ -3,23 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mykman <mykman@student.19.be>              +#+  +:+       +#+        */
+/*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 09:45:37 by mykman            #+#    #+#             */
-/*   Updated: 2020/11/20 10:51:59 by mykman           ###   ########.fr       */
+/*   Updated: 2020/11/20 18:02:49 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char		*ft_substr(const char *s, unsigned int start, size_t len)
 {
-	size_t	size;
 	char	*ptr;
+	size_t	i;
+	size_t	j;
 
-	size = len + 1;
-	if (!(ptr = (char *)ft_calloc(sizeof(*ptr), size)))
+	if (!(ptr = (char *)ft_calloc(sizeof(*ptr), len + 1)) || !s || !len)
 		return (NULL);
-	
-	return(ft_memcpy(ptr, s + start, len));
+	i = 0;
+	j = 0;
+	while (s[i])
+	{
+		if (i >= start && j < len)
+		{
+			ptr[j] = s[i];
+			j++;
+		}
+		i++;
+	}
+	return (ptr);
 }
