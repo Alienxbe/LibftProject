@@ -6,7 +6,7 @@
 /*   By: mykman <mykman@student.19.be>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/10 15:46:33 by mykman            #+#    #+#             */
-/*   Updated: 2020/11/19 17:06:48 by mykman           ###   ########.fr       */
+/*   Updated: 2020/11/20 10:43:50 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,19 @@
 # include <stdlib.h>
 # include <limits.h>
 
+/*
+** ---- Premiere Partie ----
+*/
+
 void	*ft_memset(void *s, int c, size_t n);
 void	*ft_memcpy(void	*dst, const void *src, size_t n);
+void	*ft_memccpy(void *dest, const void *src, int c, size_t n);
+void	*ft_memchr(const void *s, int c, size_t n);
 void	ft_bzero(void *s, size_t n);
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
+
+void	*ft_calloc(size_t nmemb, size_t size);
+char	*ft_strdup(const char *s);
 
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dst_size);
@@ -37,5 +47,11 @@ int		ft_isprint(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 
+/*
+** ---- Seconde Partie ----
+*/
+
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
 
 #endif

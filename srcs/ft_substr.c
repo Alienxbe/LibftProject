@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mykman <mykman@student.19.be>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/18 07:52:01 by mykman            #+#    #+#             */
-/*   Updated: 2020/11/20 08:54:19 by mykman           ###   ########.fr       */
+/*   Created: 2020/11/20 09:45:37 by mykman            #+#    #+#             */
+/*   Updated: 2020/11/20 10:51:59 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int		i;
-	char	*last;
+	size_t	size;
+	char	*ptr;
 
-	i = -1;
-	last = NULL;
-	while (s[++i])
-		if (s[i] == c)
-			last = (char *)s + i;
-	return ((s[i] == c) ? (char *)s + i : last);
+	size = len + 1;
+	if (!(ptr = (char *)ft_calloc(sizeof(*ptr), size)))
+		return (NULL);
+	
+	return(ft_memcpy(ptr, s + start, len));
 }

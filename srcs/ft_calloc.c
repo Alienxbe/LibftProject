@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mykman <mykman@student.19.be>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/18 07:52:01 by mykman            #+#    #+#             */
-/*   Updated: 2020/11/20 08:54:19 by mykman           ###   ########.fr       */
+/*   Created: 2020/11/20 09:11:37 by mykman            #+#    #+#             */
+/*   Updated: 2020/11/20 09:42:59 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	int		i;
-	char	*last;
+	char	*ptr;
+	size_t	i;
 
-	i = -1;
-	last = NULL;
-	while (s[++i])
-		if (s[i] == c)
-			last = (char *)s + i;
-	return ((s[i] == c) ? (char *)s + i : last);
+	if (!(ptr = (char *)malloc(nmemb * size)))
+		return (NULL);
+	i = 0;
+	while (i < nmemb * size)
+		ptr[i++] = 0;
+	return ((void *)ptr);
 }

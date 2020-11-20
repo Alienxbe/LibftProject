@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mykman <mykman@student.19.be>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/18 07:52:01 by mykman            #+#    #+#             */
-/*   Updated: 2020/11/20 08:54:19 by mykman           ###   ########.fr       */
+/*   Created: 2020/11/20 09:19:53 by mykman            #+#    #+#             */
+/*   Updated: 2020/11/20 09:43:46 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strdup(const char *s)
 {
-	int		i;
-	char	*last;
+	size_t	size;
+	char	*ptr;
 
-	i = -1;
-	last = NULL;
-	while (s[++i])
-		if (s[i] == c)
-			last = (char *)s + i;
-	return ((s[i] == c) ? (char *)s + i : last);
+	size = (size_t)(ft_strlen(s) + 1);
+	if (!(ptr = malloc(sizeof(*ptr) * size)))
+		return (NULL);
+	return (ft_memcpy(ptr, s, size));
 }

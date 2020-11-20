@@ -6,7 +6,7 @@
 /*   By: mykman <mykman@student.19.be>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/10 15:54:10 by mykman            #+#    #+#             */
-/*   Updated: 2020/11/19 17:37:17 by mykman           ###   ########.fr       */
+/*   Updated: 2020/11/20 10:53:37 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,11 @@
 
 int main()
 {
-	/*char str[] = "Hello world. How are you doing ?";
-	memmove(str + 10, str + 5, 20);*/
-	char n[] = "1000000000223372036854775808";
+	char str1[] = "Hello";
+	char *str2 = 0;
+	char *dest;
 
-	printf("%d\n%d\n", ft_atoi(n), atoi(n));
+	dest = ft_strjoin(str1, str2);
+	printf("%s\n", dest);
 	return (0);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
+/*   By: mykman <mykman@student.19.be>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 12:34:16 by mykman            #+#    #+#             */
-/*   Updated: 2020/11/18 19:18:33 by mykman           ###   ########.fr       */
+/*   Updated: 2020/11/20 09:04:46 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,5 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned int	i;
-
-	i = 0;
-	while (s1[i] && s1[i] == s2[i] && i < n)
-		i++;
-	return ((i == n) ? 0 : s1[i] - s2[i]);
+	return (ft_memcmp(s1, s2, n));
 }

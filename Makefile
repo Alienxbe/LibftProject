@@ -11,6 +11,9 @@ RESET		= $(shell tput -Txterm sgr0)
 SRCS		=	ft_memset.c \
 				ft_bzero.c \
 				ft_memcpy.c \
+				ft_memccpy.c \
+				ft_memchr.c \
+				ft_memcmp.c \
 				ft_strlen.c \
 				ft_isalpha.c \
 				ft_isdigit.c \
@@ -25,7 +28,11 @@ SRCS		=	ft_memset.c \
 				ft_strlcpy.c \
 				ft_strlcat.c \
 				ft_strnstr.c \
-				ft_atoi.c
+				ft_atoi.c \
+				ft_calloc.c \
+				ft_strdup.c \
+				ft_substr.c \
+				ft_strjoin.c
 
 OBJS		=	$(addprefix srcs/, ${SRCS:.c=.o})
 
@@ -55,6 +62,8 @@ fclean:
 
 re:			fclean all
 
-reclean:	re clean
+so:
+	${CC} ${CFLAGS} -c -I./includes -fPIC $(addprefix srcs/, ${SRCS})
+	${CC} -shared -o libft.so ${OBJS}
 
-.PHONY:		all clean fclean re reclen
+.PHONY:		all clean fclean re so
