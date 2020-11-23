@@ -6,7 +6,7 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/10 15:46:33 by mykman            #+#    #+#             */
-/*   Updated: 2020/11/23 14:28:33 by mykman           ###   ########.fr       */
+/*   Updated: 2020/11/23 17:26:32 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,12 @@ typedef struct	s_list
 
 t_list			*ft_lstnew(void *content);
 t_list			*ft_lstlast(t_list *lst);
+t_list			*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 void			ft_lstadd_front(t_list **alst, t_list *new);
 void			ft_lstadd_back(t_list **alst, t_list *new);
+void			ft_lstdelone(t_list *lst, void (*del)(void *));
+void			ft_lstclear(t_list **lst, void (*del)(void *));
+void			ft_lstiter(t_list *lst, void (*f)(void *));
 int				ft_lstsize(t_list *lst);
 
 #endif
