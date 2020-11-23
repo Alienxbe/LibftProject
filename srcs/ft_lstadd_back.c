@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/10 15:54:10 by mykman            #+#    #+#             */
-/*   Updated: 2020/11/23 14:07:44 by mykman           ###   ########.fr       */
+/*   Created: 2020/11/23 14:25:33 by mykman            #+#    #+#             */
+/*   Updated: 2020/11/23 14:34:29 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
-#include <stdio.h>
-#include <ctype.h>
-#include <string.h>
+#include "libft.h"
 
-int main()
+void	ft_lstadd_back(t_list **alst, t_list *new)
 {
-	t_list	*l;
-	int		n;
-
-	n = 32;
-	l = ft_lstnew(&n);
-	printf("%d %p\n", *(int *)(l->content), l->next);
-	return (0);
+	if (!alst)
+		return;
+	else if (!*alst)
+		*alst = new;
+	else
+		ft_lstlast(*alst)->next = new;
 }

@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/10 15:54:10 by mykman            #+#    #+#             */
-/*   Updated: 2020/11/23 14:07:44 by mykman           ###   ########.fr       */
+/*   Created: 2020/11/22 16:57:38 by mykman            #+#    #+#             */
+/*   Updated: 2020/11/22 17:05:46 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
-#include <stdio.h>
-#include <ctype.h>
-#include <string.h>
+#include "libft.h"
 
-int main()
+void	ft_putnbr_fd(int n, int fd)
 {
-	t_list	*l;
-	int		n;
+	unsigned int	nb;
 
-	n = 32;
-	l = ft_lstnew(&n);
-	printf("%d %p\n", *(int *)(l->content), l->next);
-	return (0);
+	if (n < 0)
+	{
+		nb = -n;
+		ft_putchar_fd('-', fd);
+	}
+	else
+		nb = n;
+	if (nb > 9)
+		ft_putnbr_fd(nb / 10, fd);
+	ft_putchar_fd('0' + nb % 10, fd);
 }

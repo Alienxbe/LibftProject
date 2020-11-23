@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/10 15:54:10 by mykman            #+#    #+#             */
-/*   Updated: 2020/11/23 14:07:44 by mykman           ###   ########.fr       */
+/*   Created: 2020/11/22 16:38:14 by mykman            #+#    #+#             */
+/*   Updated: 2020/11/22 16:39:33 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
-#include <stdio.h>
-#include <ctype.h>
-#include <string.h>
+#include "libft.h"
 
-int main()
+void	ft_putchar_fd(char c, int fd)
 {
-	t_list	*l;
-	int		n;
-
-	n = 32;
-	l = ft_lstnew(&n);
-	printf("%d %p\n", *(int *)(l->content), l->next);
-	return (0);
+	write(fd, &c, 1);
 }

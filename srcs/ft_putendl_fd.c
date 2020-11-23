@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/10 15:54:10 by mykman            #+#    #+#             */
-/*   Updated: 2020/11/23 14:07:44 by mykman           ###   ########.fr       */
+/*   Created: 2020/11/22 16:54:04 by mykman            #+#    #+#             */
+/*   Updated: 2020/11/22 17:07:38 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
-#include <stdio.h>
-#include <ctype.h>
-#include <string.h>
+#include "libft.h"
 
-int main()
+void	ft_putendl_fd(char *s, int fd)
 {
-	t_list	*l;
-	int		n;
-
-	n = 32;
-	l = ft_lstnew(&n);
-	printf("%d %p\n", *(int *)(l->content), l->next);
-	return (0);
+	if (!s)
+		return;
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }

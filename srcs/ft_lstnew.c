@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/10 15:54:10 by mykman            #+#    #+#             */
-/*   Updated: 2020/11/23 14:07:44 by mykman           ###   ########.fr       */
+/*   Created: 2020/11/23 13:43:11 by mykman            #+#    #+#             */
+/*   Updated: 2020/11/23 13:48:38 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
-#include <stdio.h>
-#include <ctype.h>
-#include <string.h>
+#include "libft.h"
 
-int main()
+t_list	*ft_lstnew(void *content)
 {
-	t_list	*l;
-	int		n;
+	t_list	*ptr;
 
-	n = 32;
-	l = ft_lstnew(&n);
-	printf("%d %p\n", *(int *)(l->content), l->next);
-	return (0);
+	if (!(ptr = (t_list *)malloc(sizeof(t_list *))))
+		return (NULL);
+	ptr->content = content;
+	ptr->next = NULL;
+	return (ptr);
 }

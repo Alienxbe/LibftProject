@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mykman <mykman@student.19.be>              +#+  +:+       +#+        */
+/*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 19:41:16 by mykman            #+#    #+#             */
-/*   Updated: 2020/11/21 18:00:32 by mykman           ###   ########.fr       */
+/*   Updated: 2020/11/22 13:23:29 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,15 @@ static int	ft_wordcount(const char *s, char c)
 char		**ft_split(const char *s, char c)
 {
 	char	**tab;
-	char	*word;
 	int		ts;
 	int		ws;
 	int		i;
 
+	if (!s)
+		return (NULL);
 	ts = ft_wordcount(s, c);
 	i = -1;
-	if (!(tab = (char **)malloc(sizeof(char *) * (ts + 1))))
+	if (!(tab = (char **)ft_calloc(sizeof(char *), (ts + 1))))
 		return (NULL);
 	while (*s)
 	{
@@ -57,9 +58,9 @@ char		**ft_split(const char *s, char c)
 		if (*s)
 		{
 			ws = ft_wordsize(s, c);
-			if (!(word = (char *)ft_calloc(sizeof(char *), ws + 1)))
+			if (!(tab[++i] = (char *)ft_calloc(sizeof(char *), ws + 1)))
 				return (NULL);
-			tab[++i] = ft_memcpy(word, s, ws);
+			tab[i] = ft_memcpy(tab[i], s, ws);
 			s += ws;
 		}
 	}

@@ -34,9 +34,21 @@ SRCS		=	ft_memset.c \
 				ft_substr.c \
 				ft_strjoin.c \
 				ft_strtrim.c \
-				ft_split.c
+				ft_split.c \
+				ft_itoa.c \
+				ft_strmapi.c \
+				ft_putchar_fd.c \
+				ft_putstr_fd.c \
+				ft_putendl_fd.c \
+				ft_putnbr_fd.c
+SRCS_BONUS	=	ft_lstnew.c \
+				ft_lstadd_front.c \
+				ft_lstsize.c \
+				ft_lstlast.c \
+				ft_lstadd_back.c
 
 OBJS		=	$(addprefix srcs/, ${SRCS:.c=.o})
+OBJS_BONUS	=	$(addprefix srcs/, ${SRCS_BONUS:.c=.o})
 
 NAME		=	libft.a
 
@@ -53,12 +65,20 @@ ${NAME}:	${OBJS}
 
 all:		${NAME}
 
+bonus:		all ${OBJS_BONUS}
+	@ar -rcs ${NAME} ${OBJS_BONUS}
+	@echo "${BLUE}Bonus added !${RESET}"
+
 clean:
 	@rm -f ${OBJS}
 	@echo "${PURPLE}Cleaning ojects.${RESET}"
 
+bclean:
+	@rm -f ${OBJS_BONUS}
+	@echo "${LIGHTPURPLE}Cleaning bonus objects.${RESET}"
+
 fclean:
-	@rm -f ${OBJS}
+	@rm -f ${OBJS} ${OBJS_BONUS}
 	@rm -f ${NAME}
 	@echo "${RED}Full clean.${RESET}"
 
@@ -68,4 +88,4 @@ so:
 	${CC} ${CFLAGS} -c -I./includes -fPIC $(addprefix srcs/, ${SRCS})
 	${CC} -shared -o libft.so ${OBJS}
 
-.PHONY:		all clean fclean re so
+.PHONY:		all clean bclean fclean re so

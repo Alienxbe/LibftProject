@@ -6,7 +6,7 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 17:31:43 by mykman            #+#    #+#             */
-/*   Updated: 2020/11/20 19:05:13 by mykman           ###   ########.fr       */
+/*   Updated: 2020/11/22 16:36:32 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strtrim(const char *s1, const char *set)
 {
 	int	size;
 
-	if (!s1 || !set)
+	if (!s1)
 		return (0);
 	while (*s1 && ft_strchr(set, *s1))
 		s1++;
