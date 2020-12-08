@@ -6,7 +6,7 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 15:20:54 by mykman            #+#    #+#             */
-/*   Updated: 2020/11/23 16:48:37 by mykman           ###   ########.fr       */
+/*   Updated: 2020/12/08 14:14:48 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	size_t	j;
 
 	i = 0;
-	if (!(*needle) || !len)
+	if (!*needle)
 		return ((char *)haystack);
 	while (haystack[i] && i < len)
 	{
