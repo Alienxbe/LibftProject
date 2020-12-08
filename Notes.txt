@@ -1,0 +1,3 @@
+- ft_substr() :	Memory leak
+- ft_split() :	Memory leak
+				2nd malloc ! TYPE !
