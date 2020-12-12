@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
+/*   By: mykman <mykman@student.19.be>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 19:41:16 by mykman            #+#    #+#             */
-/*   Updated: 2020/11/22 13:23:29 by mykman           ###   ########.fr       */
+/*   Updated: 2020/12/09 17:37:13 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 static int	ft_wordsize(const char *s, char c)
 {
@@ -38,6 +39,20 @@ static int	ft_wordcount(const char *s, char c)
 	return (wc);
 }
 
+void	*ft_freeall(char ***tab, int i)
+{
+	int	j;
+
+	j = -1;
+	while (++j < i)
+	{
+		printf("%s\n", *tab[j]);
+		free(*tab[j]);
+	}
+	free(*tab);
+	return (NULL);
+}
+
 char		**ft_split(const char *s, char c)
 {
 	char	**tab;
@@ -58,8 +73,8 @@ char		**ft_split(const char *s, char c)
 		if (*s)
 		{
 			ws = ft_wordsize(s, c);
-			if (!(tab[++i] = (char *)ft_calloc(sizeof(char *), ws + 1)))
-				return (NULL);
+			if (!(tab[++i] = (char *)ft_calloc(sizeof(char), ws + 1)))
+				return (ft_freeall(&tab, i));
 			tab[i] = ft_memcpy(tab[i], s, ws);
 			s += ws;
 		}

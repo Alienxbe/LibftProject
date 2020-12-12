@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
+/*   By: mykman <mykman@student.19.be>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/10 15:54:10 by mykman            #+#    #+#             */
-/*   Updated: 2020/12/08 16:21:52 by mykman           ###   ########.fr       */
+/*   Updated: 2020/12/09 17:36:21 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,13 @@
 
 int main()
 {
-	char n[] = "18446744073709551615";
-	printf("%d\n%d", ft_atoi(n), atoi(n));
+	char *str = "Salut toi comment ca va";
+	char **tab = ft_split(str, ' ');
+	int i;
+
+	i = -1;
+	while (tab[++i])
+		printf("%s\n", tab[i]);
+	ft_freeall(&tab, i - 1);
 	return (0);
 }
