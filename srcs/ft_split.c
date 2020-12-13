@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mykman <mykman@student.19.be>              +#+  +:+       +#+        */
+/*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 19:41:16 by mykman            #+#    #+#             */
-/*   Updated: 2020/12/09 17:37:13 by mykman           ###   ########.fr       */
+/*   Updated: 2020/12/12 17:40:31 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,17 +39,17 @@ static int	ft_wordcount(const char *s, char c)
 	return (wc);
 }
 
-void	*ft_freeall(char ***tab, int i)
+static void	*ft_freeall(char **tab, int i)
 {
 	int	j;
 
 	j = -1;
 	while (++j < i)
 	{
-		printf("%s\n", *tab[j]);
-		free(*tab[j]);
+		printf("%s\n", tab[j]);
+		free(tab[j]);
 	}
-	free(*tab);
+	free(tab);
 	return (NULL);
 }
 
@@ -74,7 +74,7 @@ char		**ft_split(const char *s, char c)
 		{
 			ws = ft_wordsize(s, c);
 			if (!(tab[++i] = (char *)ft_calloc(sizeof(char), ws + 1)))
-				return (ft_freeall(&tab, i));
+				return (ft_freeall(tab, i));
 			tab[i] = ft_memcpy(tab[i], s, ws);
 			s += ws;
 		}
