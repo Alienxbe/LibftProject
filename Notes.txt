@@ -1,3 +1,3 @@
-- ft_substr() :	Memory leak
-- ft_split() :	Memory leak
-				2nd malloc ! TYPE !
+Attention : si déréférencement, alors protection !
+=> Passer tous les fichiers en revoues pour ça !
+(tips) Cast dans la compilation et pas dans l'execution
