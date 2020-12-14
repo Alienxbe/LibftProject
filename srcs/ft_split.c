@@ -6,7 +6,7 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 19:41:16 by mykman            #+#    #+#             */
-/*   Updated: 2020/12/12 17:40:31 by mykman           ###   ########.fr       */
+/*   Updated: 2020/12/14 12:19:12 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,8 @@ static int	ft_wordcount(const char *s, char c)
 
 static void	*ft_freeall(char **tab, int i)
 {
-	int	j;
-
-	j = -1;
-	while (++j < i)
-	{
-		printf("%s\n", tab[j]);
-		free(tab[j]);
-	}
+	while (i--)
+		free(tab[i]);
 	free(tab);
 	return (NULL);
 }

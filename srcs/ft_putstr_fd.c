@@ -6,7 +6,7 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/22 16:43:39 by mykman            #+#    #+#             */
-/*   Updated: 2020/11/23 16:47:19 by mykman           ###   ########.fr       */
+/*   Updated: 2020/12/14 12:13:54 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,5 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	while (s && *s)
-		ft_putchar_fd(*s++, fd);
+	write(fd, s, ft_strlen(s));
 }
