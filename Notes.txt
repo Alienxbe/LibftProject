@@ -1,3 +1,7 @@
 Attention : si déréférencement, alors protection !
 => Passer tous les fichiers en revoues pour ça !
 (tips) Cast dans la compilation et pas dans l'execution
+- putstr : plus opti avec strlen
+- substr : taille du malloc dépends de la longueur de la string : pas erreur, mais mieux
+====
+Forbidden function ft_split() : printf()
