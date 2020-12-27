@@ -6,7 +6,7 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 08:20:21 by mykman            #+#    #+#             */
-/*   Updated: 2020/11/20 14:36:12 by mykman           ###   ########.fr       */
+/*   Updated: 2020/12/27 20:27:32 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,11 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned char	*ptr_s;
-	unsigned char	letter;
 	size_t			i;
 
-	ptr_s = (unsigned char *)s;
-	letter = (unsigned char)c;
-	i = 0;
-	while (i < n)
-	{
-		if (*(ptr_s + i) == letter)
-			return ((void *)(ptr_s + i));
-		i++;
-	}
+	i = -1;
+	while (++i < n)
+		if (((const unsigned char *)s)[i] == (unsigned char)c)
+			return ((void *)((const unsigned char *)s + i));
 	return (NULL);
 }

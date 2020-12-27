@@ -6,7 +6,7 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 17:41:31 by mykman            #+#    #+#             */
-/*   Updated: 2020/12/14 16:12:56 by mykman           ###   ########.fr       */
+/*   Updated: 2020/12/27 17:05:48 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 	while (i < n)
 	{
 		*((unsigned char *)dest + i) = *((unsigned char *)src + i);
-		if (*((unsigned char *)dest + i) == (unsigned char)letter)
+		if (*((unsigned char *)dest + i) == (unsigned char)c)
 			return (((unsigned char *)dest + i + 1));
 		i++;
 	}

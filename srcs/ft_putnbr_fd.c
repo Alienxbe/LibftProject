@@ -6,7 +6,7 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/22 16:57:38 by mykman            #+#    #+#             */
-/*   Updated: 2020/11/23 16:48:15 by mykman           ###   ########.fr       */
+/*   Updated: 2020/12/27 20:37:06 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_putnbr_fd(int n, int fd)
 {
 	unsigned int	nb;
 
+	if (fd < 0)
+		return ;
 	if (n < 0)
 	{
 		nb = -n;

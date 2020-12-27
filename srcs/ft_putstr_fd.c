@@ -6,7 +6,7 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/22 16:43:39 by mykman            #+#    #+#             */
-/*   Updated: 2020/12/14 12:13:54 by mykman           ###   ########.fr       */
+/*   Updated: 2020/12/27 20:37:39 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	write(fd, s, ft_strlen(s));
+	if (s && fd >= 0)
+		write(fd, s, ft_strlen(s));
 }
