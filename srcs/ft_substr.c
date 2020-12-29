@@ -6,7 +6,7 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 09:45:37 by mykman            #+#    #+#             */
-/*   Updated: 2020/12/27 21:07:00 by mykman           ###   ########.fr       */
+/*   Updated: 2020/12/29 17:32:08 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,12 @@ char		*ft_substr(const char *s, unsigned int start, size_t len)
 	size_t	i;
 	size_t	j;
 
-
-	if (ft_strlen(s) - start > len)
-		size = ft_strlen(s) - start;
-	else
-		size = len
-
-
-
 	if (!s)
 		return (NULL);
-	if (!(ptr = (char *)ft_calloc(sizeof(*ptr), )))
+	len = (len > ft_strlen(s) - start + 1) ? ft_strlen(s) - start : len;
+	if (start > ft_strlen(s))
+		return (ft_strdup(""));
+	if (!(ptr = (char *)ft_calloc(sizeof(*ptr), len + 1)))
 		return (NULL);
 	i = -1;
 	j = 0;

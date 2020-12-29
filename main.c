@@ -6,7 +6,7 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/10 15:54:10 by mykman            #+#    #+#             */
-/*   Updated: 2020/12/27 20:05:57 by mykman           ###   ########.fr       */
+/*   Updated: 2020/12/29 17:30:45 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 int main()
 {
-	printf("%lu\n", ft_strlen(NULL));
+	char *str = ft_substr("Bonjour", 15, 5);
 
 	return (0);
 }
