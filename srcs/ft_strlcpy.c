@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
+/*   By: mykman <mykman@student.19.be>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 12:47:40 by mykman            #+#    #+#             */
-/*   Updated: 2020/11/20 15:43:50 by mykman           ###   ########.fr       */
+/*   Updated: 2021/01/03 17:30:03 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	if (!dst || !src)
 		return (0);
 	if ((i = ft_strlen(src)) + 1 < dstsize)
-		ft_memcpy(dst, src, i + 1);
+		--
 	else if (dstsize)
 	{
 		ft_memcpy(dst, src, dstsize - 1);

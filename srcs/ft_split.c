@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
+/*   By: mykman <mykman@student.19.be>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 19:41:16 by mykman            #+#    #+#             */
-/*   Updated: 2020/12/14 12:19:12 by mykman           ###   ########.fr       */
+/*   Updated: 2021/01/03 17:55:04 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static int	ft_wordsize(const char *s, char c)
 {
