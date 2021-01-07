@@ -6,7 +6,7 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 12:23:21 by mykman            #+#    #+#             */
-/*   Updated: 2020/12/27 20:07:07 by mykman           ###   ########.fr       */
+/*   Updated: 2021/01/07 19:19:36 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
+	if (!s)
+		return (NULL);
 	while (n--)
 		((unsigned char *)s)[n] = c;
 	return (s);

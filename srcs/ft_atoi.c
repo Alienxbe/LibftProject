@@ -6,7 +6,7 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 16:03:07 by mykman            #+#    #+#             */
-/*   Updated: 2020/11/20 15:53:18 by mykman           ###   ########.fr       */
+/*   Updated: 2021/01/07 18:30:13 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int	ft_atoi(const char *str)
 	int					sign;
 	int					i;
 
+	if (!str)
+		return (0);
 	n = 0;
 	i = 0;
 	while (str[i] == '\t' || str[i] == '\v' || str[i] == '\n'

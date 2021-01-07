@@ -6,7 +6,7 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/10 15:54:10 by mykman            #+#    #+#             */
-/*   Updated: 2021/01/03 19:13:59 by mykman           ###   ########.fr       */
+/*   Updated: 2021/01/07 18:51:03 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,9 @@
 
 int main()
 {
-	char *str = "Bonjour a tous les amis";
+	char *str;
 
-	printf("%s\n", ft_substr(str, 50, 7));
+	str = (char *)ft_calloc(sizeof(char), 10);
+	printf("%s\n", (char *)ft_memset(str, '5', 9));
 	return (0);
 }
