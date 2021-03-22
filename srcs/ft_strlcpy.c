@@ -6,7 +6,7 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 12:47:40 by mykman            #+#    #+#             */
-/*   Updated: 2021/01/07 18:35:22 by mykman           ###   ########.fr       */
+/*   Updated: 2021/03/22 20:12:17 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 
 	if (!dst || !src)
 		return (0);
-	if ((i = ft_strlen(src)) + 1 < dstsize)
+	i = ft_strlen(src);
+	if (i + 1 < dstsize)
 		ft_memcpy(dst, src, i + 1);
 	else if (dstsize)
 	{

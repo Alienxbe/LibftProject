@@ -6,7 +6,7 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 07:52:01 by mykman            #+#    #+#             */
-/*   Updated: 2021/01/07 19:55:44 by mykman           ###   ########.fr       */
+/*   Updated: 2021/03/22 20:15:58 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,7 @@ char	*ft_strrchr(const char *s, int c)
 	while (s[++i])
 		if (s[i] == c)
 			last = (char *)s + i;
-	return ((s[i] == c) ? (char *)s + i : last);
+	if (s[i] == c)
+		return ((char *)s + i);
+	return (last);
 }

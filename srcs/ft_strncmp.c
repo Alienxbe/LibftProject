@@ -6,7 +6,7 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 12:34:16 by mykman            #+#    #+#             */
-/*   Updated: 2021/01/07 19:55:23 by mykman           ###   ########.fr       */
+/*   Updated: 2021/03/22 20:13:46 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	i = 0;
 	while (ptr_s1[i] && ptr_s2[i] && i < n && ptr_s1[i] == ptr_s2[i])
 		i++;
-	return ((i == n) ? 0 : ptr_s1[i] - ptr_s2[i]);
+	if (i == n)
+		return (0);
+	return (ptr_s1[i] - ptr_s2[i]);
 }

@@ -6,7 +6,7 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 09:11:37 by mykman            #+#    #+#             */
-/*   Updated: 2021/01/07 18:50:40 by mykman           ###   ########.fr       */
+/*   Updated: 2021/03/22 18:52:37 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	char	*ptr;
 
-	if (!(ptr = (char *)malloc(nmemb * size)))
+	ptr = (char *)malloc(nmemb * size);
+	if (!ptr)
 		return (NULL);
 	ft_bzero(ptr, nmemb * size);
 	return ((void *)ptr);

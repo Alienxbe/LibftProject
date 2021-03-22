@@ -6,7 +6,7 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 16:50:35 by mykman            #+#    #+#             */
-/*   Updated: 2020/12/27 18:01:33 by mykman           ###   ########.fr       */
+/*   Updated: 2021/03/22 19:56:39 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,18 @@ static void	ft_freeall(t_list **lst)
 	}
 }
 
-t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*clst;
 	t_list	*tmp;
 
-	if (!f || !(clst = ft_lstnew(NULL)))
+	clst = ft_lstnew(NULL);
+	if (!f || !clst)
 		return (NULL);
 	while (lst)
 	{
-		if (!(ft_lstlast(clst)->next = ft_lstnew(f(lst->content))))
+		ft_lstlast(clst)->next = ft_lstnew(f(lst->content));
+		if (!ft_lstlast(clst)->next)
 		{
 			if (!del)
 				ft_freeall(&clst);

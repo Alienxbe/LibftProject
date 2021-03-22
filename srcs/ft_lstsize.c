@@ -6,7 +6,7 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 14:12:51 by mykman            #+#    #+#             */
-/*   Updated: 2020/11/23 16:45:32 by mykman           ###   ########.fr       */
+/*   Updated: 2021/03/22 20:01:04 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,10 @@ int	ft_lstsize(t_list *lst)
 	n = 0;
 	if (!lst)
 		return (n);
-	while ((lst = lst->next))
+	while (lst)
+	{
+		lst = lst->next;
 		n++;
+	}
 	return (n + 1);
 }

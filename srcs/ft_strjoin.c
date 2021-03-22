@@ -6,7 +6,7 @@
 /*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 10:29:09 by mykman            #+#    #+#             */
-/*   Updated: 2020/11/20 18:02:42 by mykman           ###   ########.fr       */
+/*   Updated: 2021/03/22 20:11:07 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	if (!s1 || !s2)
 		return (NULL);
 	size = ft_strlen(s1) + ft_strlen(s2) + 1;
-	if (!(ptr = (char *)ft_calloc(sizeof(*ptr), size)))
+	ptr = (char *)ft_calloc(sizeof(*ptr), size);
+	if (!ptr)
 		return (NULL);
 	ft_memcpy(ptr, s1, ft_strlen(s1));
 	ft_memcpy(ptr + ft_strlen(s1), s2, ft_strlen(s2));
